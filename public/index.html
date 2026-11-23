@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ghostlight finds commitments you left in GitHub threads and traces the evidence.">
+  <title>Ghostlight</title>
+  <link rel="icon" href="/beacon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="masthead wrap">
+    <a href="/" class="wordmark"><img src="/beacon.svg" width="29" height="29" alt=""><span>Ghostlight</span></a>
+    <button class="button quiet" type="button" id="about-button">How it works</button>
+  </header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="headline">
+      <div class="hero-main">
+        <h1 id="headline">Find the promises<br>you left behind.</h1>
+        <p class="intro">Trace commitments you made in GitHub threads.</p>
+        <form id="investigate-form" class="investigate-form">
+          <label for="repository">Repository
+            <input id="repository" name="repo" maxlength="140" placeholder="owner/repository" required spellcheck="false" autocapitalize="off">
+          </label>
+          <label for="username">GitHub username
+            <input id="username" name="username" maxlength="40" placeholder="username" required spellcheck="false" autocapitalize="off">
+          </label>
+          <button class="button primary" id="run-button" type="submit">Run investigation</button>
+        </form>
+        <div class="form-actions">
+          <button type="button" class="text-button" id="history-button">Replay a real merge</button>
+          <p id="repo-scope" class="muted" hidden></p>
+        </div>
+        <noscript><p>Enable JavaScript to run an investigation.</p></noscript>
+      </div>
+      <figure class="mast-photo">
+        <img src="/portland-head-light.webp" alt="Black-and-white photograph of surf breaking beneath Portland Head Light" width="928" height="728" fetchpriority="high">
+        <figcaption><span>Portland Head Light, 1931</span><a href="https://www.loc.gov/item/90715540/" target="_blank" rel="noopener noreferrer">Library of Congress</a></figcaption>
+      </figure>
+    </section>
+
+    <section class="investigation" aria-labelledby="report-heading">
+      <header class="report-header" id="report-header" hidden>
+        <div>
+          <h2 id="report-heading" tabindex="-1"></h2>
+          <p id="report-target"></p>
+        </div>
+        <div class="inbox-actions">
+          <label class="saved-target" id="saved-target" hidden>Saved inboxes
+            <select id="saved-inboxes"></select>
+          </label>
+          <button class="button quiet" id="recheck-button" type="button" hidden>Recheck inbox</button>
+          <button class="button quiet" id="replay-button" type="button" hidden></button>
+          <button class="text-button" id="inbox-button" type="button" hidden>Back to inbox</button>
+        </div>
+      </header>
+      <p id="status" class="status" role="status" aria-live="polite" aria-atomic="true"></p>
+      <div id="error" class="error" role="alert" hidden></div>
+
+      <div id="report" class="report" hidden>
+        <aside class="promise-index" aria-labelledby="promises-heading">
+          <h3 id="promises-heading">Promises</h3>
+          <ul class="promise-list" id="promise-list"></ul>
+        </aside>
+        <article class="case" id="case" aria-labelledby="case-heading"></article>
+      </div>
+      <div id="empty" class="empty" hidden>
+        <p id="empty-message"></p>
+      </div>
+      <footer id="report-footer" class="report-footer" hidden>
+        <p id="scan-source"></p>
+        <p id="scan-scope"></p>
+      </footer>
+    </section>
+  </main>
+
+  <dialog id="about" aria-labelledby="about-title">
+    <div class="dialog-header">
+      <h2 id="about-title">How it works</h2>
+      <form method="dialog"><button class="button quiet" autofocus>Close</button></form>
+    </div>
+    <ol>
+      <li>Pick a repository and a GitHub username. Ghostlight looks for first-person commitments in recent issue and pull request threads.</li>
+      <li>Ghostlight saves the commitments it finds. Recheck the inbox to see new evidence and status changes.</li>
+      <li>Open the original sources and copy a follow-up to post yourself. A matching merge is evidence of a code change. Release status takes a separate check.</li>
+    </ol>
+  </dialog>
+</body>
+</html>

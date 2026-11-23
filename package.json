@@ -1,0 +1,12 @@
+{
+  "name": "ghostlight",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A personal agent that follows up on promises left in GitHub threads.",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node --test"
+  }
+}

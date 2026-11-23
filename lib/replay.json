@@ -1,0 +1,40 @@
+{
+  "repo": "superfly/flyctl",
+  "username": "SohamShrivastava",
+  "before": "2026-11-08T04:15:48Z",
+  "after": "2026-11-08T04:16:00Z",
+  "issue": {
+    "number": 5381,
+    "title": "fly launch is adding stuff to my fly.toml",
+    "html_url": "https://github.com/superfly/flyctl/issues/5381",
+    "created_at": "2026-11-06T22:59:31Z",
+    "closed_at": "2026-11-08T04:15:51Z",
+    "state": "closed",
+    "user": {
+      "login": "mbelyayev"
+    }
+  },
+  "comment": {
+    "id": 6711617537,
+    "issue_url": "https://api.github.com/repos/superfly/flyctl/issues/5381",
+    "html_url": "https://github.com/superfly/flyctl/issues/5381#issuecomment-6711617537",
+    "created_at": "2026-11-07T18:54:09Z",
+    "user": {
+      "login": "SohamShrivastava"
+    },
+    "body": "I’ll investigate and open a draft PR soon."
+  },
+  "pull": {
+    "number": 5395,
+    "title": "Stop fly launch adding [http_service] to copied configs without one",
+    "html_url": "https://github.com/superfly/flyctl/pull/5395",
+    "created_at": "2026-11-07T21:40:22Z",
+    "closed_at": "2026-11-08T04:15:49Z",
+    "merged_at": "2026-11-08T04:15:49Z",
+    "state": "closed",
+    "user": {
+      "login": "SohamShrivastava"
+    },
+    "body": "Fixes #5381"
+  }
+}
